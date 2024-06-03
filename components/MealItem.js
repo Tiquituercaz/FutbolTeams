@@ -1,13 +1,23 @@
 import { View, Text, Image, Pressable, StyleSheet, Platform } from "react-native"
+import { useNavigation} from '@react-navigation/native'
+import MealDetails from "./MealDetails"
 
-function MealItem({ title, imageUrl, duration, complexity, affordability }){
+function MealItem({ id, title, imageUrl, duration, complexity, affordability }){
     console.log('title', title)
     console.log('imageUrl', imageUrl)
+
+    const navigation = useNavigation()
+   
+    function selectMealItemHandler(){
+        navigation.navigate('MealDetail', { mealId: id})
+    }
+
     return(
         <View style={styles.mailItem}>
             <Pressable 
                 android_ripple={{ color: '#ccc'}}
                 style={({ pressed }) => (pressed ? styles.buttonPressed : null) } 
+                onPress={selectMealItemHandler}
             >
                 <View>
                     <View>
@@ -19,11 +29,11 @@ function MealItem({ title, imageUrl, duration, complexity, affordability }){
                             {title}
                         </Text>
                     </View>
-                    <View style={styles.details}>
-                        <Text style={styles.detailItem}>{duration}</Text>
-                        <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-                        <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
-                    </View>
+                    <MealDetails 
+                        duration={duration}
+                        complexity={complexity}
+                        affordability={affordability}
+                    />
                 </View>
             </Pressable>
         </View>
@@ -62,14 +72,4 @@ const styles = StyleSheet.create({
         fontSize: 18,
         margin: 8
     },
-    details: {
-        flexDirection: 'row',
-        alignItems: 'center', 
-        justifyContent: 'center',
-        padding: 8
-    },
-    detailItem: {
-        marginHorizontal: 4,
-        fontSize: 12
-    }
 })
