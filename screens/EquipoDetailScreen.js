@@ -1,12 +1,12 @@
 import { Image, Text, View, StyleSheet, ScrollView } from "react-native"
 
-import { MEALS } from '../data/dummy_data'
+import { EQUIPOS } from '../data/dummy_data'
 import EquipoDetails from "../components/EquiposDetails"
 
 function EquipoDetailScree({route, navigation}) {
     const equipoId = route.params.equipoId
 
-    const selectedEquipo = EQUIPO.find((equipo) => equipo.id === equipoId)
+    const selectedEquipo = EQUIPOS.find((equipo) => equipo.id === equipoId)
 
     return(
         <ScrollView>

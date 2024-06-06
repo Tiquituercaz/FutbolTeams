@@ -5,8 +5,8 @@ function EquiposDetails({champions, ligas, copaNacional}){
 
         <View style={styles.details}>
             <Text style={styles.detailItem}>{champions}</Text>
-            <Text style={styles.detailItem}>{ligas.toUpperCase()}</Text>
-            <Text style={styles.detailItem}>{copaNacional.toUpperCase()}</Text>
+            <Text style={styles.detailItem}>{ligas}</Text>
+            <Text style={styles.detailItem}>{copaNacional}</Text>
         </View>
     )
 

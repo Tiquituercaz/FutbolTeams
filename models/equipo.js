@@ -18,4 +18,4 @@ class Equipo {
   }
 }
 
-export default Meal;
+export default Equipo;

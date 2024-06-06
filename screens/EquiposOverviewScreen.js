@@ -24,7 +24,7 @@ function EquiposOverviewScreen({ route, navigation }){
     
         return(
 
-            <MealItem
+            <EquipoItem
                 id={equipoData.item.id} 
                 title={equipoData.item.title}
                 imageUrl={equipoData.item.imageUrl}
