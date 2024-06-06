@@ -1,34 +1,34 @@
 import { Image, Text, View, StyleSheet, ScrollView } from "react-native"
 
 import { MEALS } from '../data/dummy_data'
-import MealDetails from "../components/MealDetails"
+import EquipoDetails from "../components/EquiposDetails"
 
-function MealDetailScree({route, navigation}) {
-    const mealId = route.params.mealId
+function EquipoDetailScree({route, navigation}) {
+    const equipoId = route.params.equipoId
 
-    const selectedMeal = MEALS.find((meal) => meal.id === mealId)
+    const selectedEquipo = EQUIPO.find((equipo) => equipo.id === equipoId)
 
     return(
         <ScrollView>
-            <Image style={styles.image} source={{ uri: selectedMeal.imageUrl }} />
-            <Text style={styles.title}>{selectedMeal.title}</Text>
-            <MealDetails 
-                duration={selectedMeal.duration}
-                complexity={selectedMeal.complexity}
-                affordability={selectedMeal.affordability}
+            <Image style={styles.image} source={{ uri: selectedEquipo.imageUrl }} />
+            <Text style={styles.title}>{selectedEquipo.title}</Text>
+            <EquipoDetails 
+                champions={selectedEquipo.champions}
+                ligas={selectedEquipo.ligas}
+                copaNacional={selectedEquipo.copaNacional}
             />
             <View>
                 <Text style={styles.subtitle}>Ingredients</Text>
-                {selectedMeal.ingredients.map(ingredients => <Text style={styles.textContent} key={ingredients}>{ingredients}</Text>)}
+                {selectedEquipo.ingredients.map(ingredients => <Text style={styles.textContent} key={ingredients}>{ingredients}</Text>)}
                 <Text style={styles.subtitle}>Steps</Text>
-                {selectedMeal.steps.map(step => <Text style={styles.textContent} key={step}>{step}</Text>)}
+                {selectedEquipo.steps.map(step => <Text style={styles.textContent} key={step}>{step}</Text>)}
             </View>
         </ScrollView>
     )
 
 }
 
-export default MealDetailScree
+export default EquipoDetailScree
 
 const styles = StyleSheet.create({
     image: {

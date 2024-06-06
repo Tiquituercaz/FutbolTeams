@@ -1,18 +1,18 @@
 import { View, Text, StyleSheet } from 'react-native'
 
-function MealDetails({duration, complexity, affordability}){
+function EquiposDetails({champions, ligas, copaNacional}){
     return(
 
         <View style={styles.details}>
-            <Text style={styles.detailItem}>{duration}</Text>
-            <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-            <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
+            <Text style={styles.detailItem}>{champions}</Text>
+            <Text style={styles.detailItem}>{ligas.toUpperCase()}</Text>
+            <Text style={styles.detailItem}>{copaNacional.toUpperCase()}</Text>
         </View>
     )
 
 }
 
-export default MealDetails
+export default EquiposDetails
 
 const styles = StyleSheet.create({
     details: {

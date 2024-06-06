@@ -1,15 +1,15 @@
 import { View, Text, Image, Pressable, StyleSheet, Platform } from "react-native"
 import { useNavigation} from '@react-navigation/native'
-import MealDetails from "./MealDetails"
+import EquiposDetails from "./EquiposDetails"
 
-function MealItem({ id, title, imageUrl, duration, complexity, affordability }){
+function EquipoItem({ id, title, imageUrl, champions, ligas, copaNacional }){
     console.log('title', title)
     console.log('imageUrl', imageUrl)
 
     const navigation = useNavigation()
    
-    function selectMealItemHandler(){
-        navigation.navigate('MealDetail', { mealId: id})
+    function selectEquipoItemHandler(){
+        navigation.navigate('EquipoDetail', { equipoId: id})
     }
 
     return(
@@ -17,7 +17,7 @@ function MealItem({ id, title, imageUrl, duration, complexity, affordability }){
             <Pressable 
                 android_ripple={{ color: '#ccc'}}
                 style={({ pressed }) => (pressed ? styles.buttonPressed : null) } 
-                onPress={selectMealItemHandler}
+                onPress={selectEquipoItemHandler}
             >
                 <View>
                     <View>
@@ -29,10 +29,10 @@ function MealItem({ id, title, imageUrl, duration, complexity, affordability }){
                             {title}
                         </Text>
                     </View>
-                    <MealDetails 
-                        duration={duration}
-                        complexity={complexity}
-                        affordability={affordability}
+                    <EquiposDetails 
+                        champions={champions}
+                        ligas={ligas}
+                        copaNacional={copaNacional}
                     />
                 </View>
             </Pressable>
@@ -41,10 +41,10 @@ function MealItem({ id, title, imageUrl, duration, complexity, affordability }){
 
 }
 
-export default MealItem
+export default EquipoItem
 
 const styles = StyleSheet.create({
-    mealItem: {
+    EquipoItem: {
         margin: 16,
         borderRadius: 8,
         overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
