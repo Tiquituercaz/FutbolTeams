@@ -17,12 +17,7 @@ function EquipoDetailScree({route, navigation}) {
                 ligas={selectedEquipo.ligas}
                 copaNacional={selectedEquipo.copaNacional}
             />
-            <View>
-                <Text style={styles.subtitle}>Ingredients</Text>
-                {selectedEquipo.ingredients.map(ingredients => <Text style={styles.textContent} key={ingredients}>{ingredients}</Text>)}
-                <Text style={styles.subtitle}>Steps</Text>
-                {selectedEquipo.steps.map(step => <Text style={styles.textContent} key={step}>{step}</Text>)}
-            </View>
+      
         </ScrollView>
     )
 

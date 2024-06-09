@@ -2,11 +2,11 @@ import Category from '../models/category';
 import Equipo from '../models/equipo';
 
 export const CATEGORIES = [
-  new Category('c1', 'Premier League', '#f5428d'),
-  new Category('c2', 'LaLiga', '#f54242'),
-  new Category('c3', 'Bundesliga', '#f5a442'),
-  new Category('c4', 'Serie A', '#f5d142'),
-  new Category('c5', 'Ligue 1', '#368dff'),
+  new Category('c1', 'Premier League', '#3285a8'),
+  new Category('c2', 'LaLiga', '#a86832'),
+  new Category('c3', 'Bundesliga', '#a83232'),
+  new Category('c4', 'Serie A', '#32a83a'),
+  new Category('c5', 'Ligue 1', '#325ca8'),
 ];
 
 export const EQUIPOS = [
@@ -14,8 +14,8 @@ export const EQUIPOS = [
     'm1',
     ['c1'],
     'Manchester United',
-    'Clasico: Liverpool. Derby: Manchester City.',
-    'Estadio: Old Trafford',
+    'Clasico: Liverpool. Derby: Manchester City.', 
+    'Estadio: Old Trafford', 
     'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/296px-Manchester_United_FC_crest.svg.png?20190211132414',
     20,
     [
